@@ -32,7 +32,7 @@ app.post(
   retrieveData
 )
 
-continuousDiscovery();
+// continuousDiscovery();
 
 // Start the server
 app.listen(port, () => {

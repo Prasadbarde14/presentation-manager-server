@@ -2,6 +2,7 @@ const nodecastor = require("nodecastor");
 const { Client } = require("castv2-client");
 const { DefaultMediaReceiver } = require("castv2-client");
 const ping = require("ping");
+const util = require('util');
 // const { devices } = require('./server');
 let device = [];
 
@@ -13,6 +14,16 @@ const retrieveData = (req, res) => {
 
   res.send("SUCCESS");
 };
+
+nodecastor.scan().on('offline', device => {
+  try {
+    console.log(util.inspect(device));
+  } catch(error) {
+    console.log(error);
+  }
+}).on('online', device => {
+  // console.log(util.inspect(device));
+}).start();
 
 const startCasting = async (device) => {
   try {
