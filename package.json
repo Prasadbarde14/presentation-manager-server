@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "firebase": "^10.12.0",
+    "hawk": "^9.0.2",
     "mdns-js": "^1.0.3",
     "node-wifi": "^2.0.16",
     "nodecastor": "^0.1.9",
